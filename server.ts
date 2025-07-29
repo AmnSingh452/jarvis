@@ -2,10 +2,10 @@ import express from 'express';
 import compression from 'compression';
 import morgan from 'morgan';
 import { createRequestHandler } from '@remix-run/express';
-import * as build from './build'; // Adjust if your build folder is somewhere else
+const build = require('./build/server/index');// Adjust if your build folder is somewhere else
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 app.use(compression());
 app.use(morgan('tiny'));
