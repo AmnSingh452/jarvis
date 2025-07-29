@@ -19,3 +19,7 @@ COPY . .
 RUN npm run build
 
 CMD ["npm", "run", "docker-start"]
+
+EXPOSE 3000
+
+
